@@ -19,9 +19,10 @@ namespace CarBot.Services
 
         public OpenAIResponder()
         {
+
             _openAIService = new OpenAIService(new OpenAIOptions
             {
-                ApiKey = "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"
+                ApiKey = Environment.GetEnvironmentVariable("OPENAI_API_KEY")
 
             });
         }
