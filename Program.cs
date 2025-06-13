@@ -8,3 +8,4 @@ var bot = new BotService();
 bot.Start();
 
 Console.WriteLine("Bot is running. Press any key to exit.");
+await Task.Delay(-1);
