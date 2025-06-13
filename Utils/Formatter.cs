@@ -8,7 +8,7 @@ namespace CarBot.Utils
         public static string FormatVehicleIdentificationData(Dictionary<string, GeneratedFeature> fields, UserInfo userInfo)
         {
             var builder = new StringBuilder();
-            builder.AppendLine("**Vehicle Identification Data**");
+            builder.AppendLine("**Vehicle Registration Data**");
 
             foreach (var field in fields)
             {
@@ -28,24 +28,24 @@ namespace CarBot.Utils
 
                 switch (name.ToLower())
                 {
-                    case ("brand"):
-                        userInfo.Brand = value;
-                        break;
-
-                    case ("capacity"):
-                        userInfo.Capacity = value;
-                        break;
-
-                    case ("color"):
-                        userInfo.VehicleColor = value;
-                        break;
-
-                    case ("vehicle weight"):
-                        userInfo.Weight = value;
-                        break;
-
-                    case ("vehicle identification number"):
+                    case ("vehicle registration number"):
                         userInfo.VIN = value;
+                        break;
+
+                    case ("registration date"):
+                        userInfo.RegistrationDate = value;
+                        break;
+
+                    case ("release year"):
+                        userInfo.ReleaseYear = value;
+                        break;
+
+                    case ("surname"):
+                        userInfo.Surname = value;
+                        break;
+
+                    case ("given names"):
+                        userInfo.GivenNames = value;
                         break;
 
                     default:

@@ -57,7 +57,7 @@ namespace CarBot.Bot
                     {
                         isPassportConfirmed = true;
                         await bot.SendMessage(message.Chat.Id, "Passport confirmed.", cancellationToken: cancellationToken);
-                        await bot.SendMessage(message.Chat.Id, "Now send the vehicle identification document.", cancellationToken: cancellationToken);
+                        await bot.SendMessage(message.Chat.Id, "Now send the vehicle registration document.", cancellationToken: cancellationToken);
                     }
                     else if (!isVehicleConfirmed)
                     {
@@ -137,7 +137,7 @@ namespace CarBot.Bot
                 {
                     case "/start":
                         await bot.SendMessage(message.Chat.Id, "Hello! I'm your Car Insurance Assistant Bot.\r\n\r\nYou can send me a photo of your car documents or ask questions about car insurance.");
-                        await bot.SendMessage(message.Chat.Id, "Please submit a photo of your passport and then your vehicle identification document.");
+                        await bot.SendMessage(message.Chat.Id, "Please submit a photo of your passport and then your vehicle registration document.");
                         isPassportConfirmed = false;
                         isVehicleConfirmed = false;
                         confirmationProcess = false;

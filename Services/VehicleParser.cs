@@ -32,10 +32,14 @@ namespace CarBot.Services
             }
 
             var inputSource = new LocalInputSource(tempPath);
+
             CustomEndpoint endpoint = new CustomEndpoint(
-                endpointName: "vehicle_identification",
+                endpointName: "vehicle_registration",
                 accountName: "Nostiia",
-                version: "1");
+                version: "1"
+            );
+
+
             var response = await _mindeeClient.EnqueueAndParseAsync<GeneratedV1>(inputSource, endpoint);
 
 

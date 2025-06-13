@@ -57,11 +57,12 @@ namespace CarBot.Services
                         Full Name: {_userInfo.FullName}
                         Date of Birth: {_userInfo.BirthDate}
                         ID Number: {_userInfo.IdNumber}
-                        Car Brand: {_userInfo.Brand}
-                        Engine Capacity: {_userInfo.Capacity} cc
-                        Color: {_userInfo.VehicleColor}
-                        Weight: {_userInfo.Weight} kg
-                        VIN: {_userInfo.VIN}
+
+                        Vehicle registration number: {_userInfo.VIN}
+                        Registration Date: {_userInfo.RegistrationDate}
+                        Release year: {_userInfo.ReleaseYear}
+                        Surname: {_userInfo.Surname}
+                        Given Names: {_userInfo.GivenNames}
                         Cost: ${_userInfo.Cost}
                         
                         Date: {DateTime.Now}
