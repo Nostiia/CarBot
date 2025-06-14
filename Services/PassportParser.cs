@@ -32,9 +32,12 @@ namespace CarBot.Services
             var response = await _mindeeClient.ParseAsync<PassportV1>(inputSource);
             var document = response.Document.Inference.Prediction;
 
-            if (document == null)
+            if (document == null || string.IsNullOrWhiteSpace(document.Surname?.Value) &&
+        (document.GivenNames == null || document.GivenNames.FirstOrDefault()?.Value == null))
             {
-                return "No data extracted from passport.";
+                await Task.Delay(TimeSpan.FromSeconds(30));
+                File.Delete(tempPath);
+                return "Unable to extract data from the image. Please retake the photo and try again.";
             }
 
             var builder = new StringBuilder();
