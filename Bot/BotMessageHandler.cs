@@ -150,6 +150,7 @@ namespace CarBot.Bot
 
                     default:
                         await _aiResponder.RespondAsync(bot, update, cancellationToken, message.Text);
+                        await bot.SendMessage(message.Chat.Id, "Please provide me your documents (passport first).", cancellationToken: cancellationToken);
                         break;
                 }
             }
